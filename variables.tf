@@ -1,13 +1,11 @@
 variable "region" {
-  type    = string
-  default = "us-east-1"
-}
-
-variable "project_name" {
-  type = string
+  description = "Region of the AWS account for resource deployment"
+  type        = string
+  default     = "us-east-1"
 }
 
 variable "vpc_config" {
+  description = "VPC Configurations. Required details are vpc_name and vpc_cidr"
   type = object({
     vpc_name = string
     vpc_cidr = string
@@ -21,6 +19,7 @@ variable "vpc_config" {
 
 
 variable "subnet_config" {
+  description = "Subnet configurations. Required details: cidr_block, public(indicating whether the subnet is public or private) and availability zone"
   type = map(object({
     cidr_block = string
     public     = optional(bool, false)
