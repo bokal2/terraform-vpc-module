@@ -1,3 +1,8 @@
+variable "project_name" {
+  type        = string
+  description = "The name of the workload or project to be used as `Name` tag"
+}
+
 variable "region" {
   description = "Region of the AWS account for resource deployment"
   type        = string

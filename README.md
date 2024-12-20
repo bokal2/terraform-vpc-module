@@ -7,7 +7,7 @@ A Terraform Networking module that can be used to scaffold VPC resources.
 ```hcl
 module "vpc" {
     source = "modules/networking"
-
+    project_name = "test-project"
     vpc_config = {
         vpc_cidr = "10.0.0.0/16"
         vpc_name = "test-vpc"
